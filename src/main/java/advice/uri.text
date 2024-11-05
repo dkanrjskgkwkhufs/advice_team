@@ -1,0 +1,10 @@
+/signup + get => 회원가입 폼
+/signup + post => 회원가입 로직 처리
+
+
+
+수정해야 할 사항
+
+RegisterController에 listmapping 부분 지우기
+회원 저장 후, 로그인 창으로 redirect하기(view띄우기 X 왜냐하면 새로고침 문제 발생 가능성 있음)
+저장후, 저장되었습니다. 출력하기(아마 status param=true로 넘겨서, th if 문으로 출력할듯)

@@ -2,6 +2,7 @@ package advice.teamproject.web.controller;
 
 import advice.teamproject.domain.entity.Member;
 import advice.teamproject.domain.service.RegisterService;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -22,22 +23,21 @@ public class RegisterController {
 
     private final RegisterService memberService;
 
-    @GetMapping //그냥 signup 파일
+    @GetMapping //그냥 signup 폼
     public String signup() {
         return "signup";
     }
 
-    @PostMapping("/add")
-    public String save(@ModelAttribute Member member, Model model) {
-        Member savedMember = memberService.join(member);
-        model.addAttribute("member", savedMember);
+    @PostMapping
+    public String save(@ModelAttribute("member")Member member) {
+        memberService.join(member);
         return "/test/signupView";
     }
 
     // 지울 것 test용
     @GetMapping("/list")
     public String view(Model model) {
-        List<Member> members = memberService.memberList();
+        List<Member> members = memberService.findMembers();
         model.addAttribute("members", members);
 
         return "/test/memberList";

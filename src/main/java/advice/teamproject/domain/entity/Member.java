@@ -1,14 +1,17 @@
 package advice.teamproject.domain.entity;
 
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Entity
+@Getter @Setter
 public class Member {
-    private Long id;
-
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
     private String username;
-    private String email;
+	private String email;
     private String password;
-
-    private char campus;
+    private String campus;
 }

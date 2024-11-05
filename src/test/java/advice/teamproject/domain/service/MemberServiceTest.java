@@ -1,12 +1,14 @@
 package advice.teamproject.domain.service;
 
 import advice.teamproject.domain.entity.Member;
-import advice.teamproject.domain.repository.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
+import advice.teamproject.domain.repository.member.MemoryMemberRepository;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.*;
 
 
 class MemberServiceTest {
+
     private final RegisterService memberService = new RegisterService(new MemoryMemberRepository());
 
     @Test
@@ -14,14 +16,14 @@ class MemberServiceTest {
 
         // given
         Member member = new Member();
-        member.setEmail("user@gmail.com");
+        member.setId(1L);
         memberService.join(member);
 
         // when
-        Member findMember = memberService.findMember("user@gmail.com");
+        Member findMember = memberService.findMember(1L).get();
 
         // then
-        Assertions.assertThat(findMember).isEqualTo(member);
+        assertThat(findMember).isEqualTo(member);
 
     }
   

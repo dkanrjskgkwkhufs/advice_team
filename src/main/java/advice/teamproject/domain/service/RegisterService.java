@@ -2,12 +2,13 @@ package advice.teamproject.domain.service;
 
 
 import advice.teamproject.domain.entity.Member;
-import advice.teamproject.domain.repository.MemberRepository;
+import advice.teamproject.domain.repository.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Slf4j
@@ -19,11 +20,11 @@ public class RegisterService {
     public Member join(Member member) {
         return memberRepository.save(member);
     }
-    public Member findMember(String email){
-        return memberRepository.findByEmail(email);
-    }
+    public Optional<Member> findMember(Long memberId) {
+		return memberRepository.findById(memberId);
+	}
 
-    public List<Member> memberList(){
-        return memberRepository.findAll();
-    }
+    public List<Member> findMembers() {
+		return memberRepository.findAll();
+	}
 }

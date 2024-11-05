@@ -1,10 +1,10 @@
 package advice.teamproject.domain.repository;
 
 import advice.teamproject.domain.entity.Member;
+import advice.teamproject.domain.repository.member.MemberRepository;
+import advice.teamproject.domain.repository.member.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MemoryMemberRepositoryTest {
 
