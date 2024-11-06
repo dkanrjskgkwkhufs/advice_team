@@ -1,0 +1,15 @@
+<!-- templates/post/post.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세</title>
+</head>
+<body>
+    <h1 th:text="${post.title}"></h1>
+    <p th:text="${post.content}"></p>
+
+    <a th:href="@{/posts/{postId}/edit(postId=${post.id})}">수정</a>
+    <a href="/posts">목록으로</a>
+</body>
+</html>

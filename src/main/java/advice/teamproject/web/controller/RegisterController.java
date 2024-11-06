@@ -2,7 +2,6 @@ package advice.teamproject.web.controller;
 
 import advice.teamproject.domain.entity.Member;
 import advice.teamproject.domain.service.RegisterService;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -28,6 +27,7 @@ public class RegisterController {
         return "signup";
     }
 
+    // 나중에는 로그인 페이지로 리다이렉트 되게
     @PostMapping
     public String save(@ModelAttribute("member")Member member) {
         memberService.join(member);
