@@ -14,7 +14,7 @@ import java.util.Optional;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class RegisterService {
+public class MemberService {
     private final MemberRepository memberRepository;
 
 
@@ -24,9 +24,14 @@ public class RegisterService {
     }
 
     // 회원 1명 찾기 (id로 찾음, id는 member 객체가 만들어질때마다 1씩 자동으로 증가함)
-    public Optional<Member> findMember(Long memberId) {
+    public Optional<Member> findMemberById(Long memberId) {
 		return memberRepository.findById(memberId);
 	}
+
+    // 회원 1명 찾기 (Email 로 찾음, login 시에 입력 들어왔을때, member 객체 찾아오기 위함)
+    public Optional<Member> findMemberByEmail(String email) {
+        return memberRepository.findByEmail(email);
+    }
 
     // 모든 멤버 조회(사용자가 사용할 일은 없음)
     public List<Member> findMembers() {

@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.*;
 
 class MemberServiceTest {
 
-    private final RegisterService memberService = new RegisterService(new MemoryMemberRepository());
+    private final MemberService memberService = new MemberService(new MemoryMemberRepository());
 
     @Test
     public void test() {

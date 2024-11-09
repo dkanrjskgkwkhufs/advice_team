@@ -24,6 +24,8 @@ public class PostController {
     // 목록 페이지
     @GetMapping
     public String listPosts(Model model) {
+
+        // 여기에 로그인되어 있는지 체크하는 로직을 추가할 것;
         List<Post> posts = postService.findPosts();
         model.addAttribute("posts", posts);
         return "/post/posts";
@@ -32,7 +34,6 @@ public class PostController {
     // 게시글 상세 페이지
     @GetMapping("/{postId}")
     public String viewPost(@PathVariable Long postId, Model model) {
-        // 여기에 로그인되어 있는지 체크하는 로직을 추가할 것;
 
         Optional<Post> post = postService.findPost(postId);
         if (post.isPresent()) {
@@ -60,7 +61,7 @@ public class PostController {
     // 게시글 수정 폼
     @GetMapping("/{postId}/edit")
     public String editPostForm(@PathVariable Long postId, Model model) {
-        // 여기서 작성한 사람 email과, 현재 로그인한 사람 email이 같은지 확인할 것
+        // 여기서 작성한 사람과, 현재 로그인한 사람이 같은지 확인할 것
 
 
         Optional<Post> post = postService.findPost(postId);
