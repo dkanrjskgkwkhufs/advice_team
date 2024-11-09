@@ -15,8 +15,8 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class MemberService {
-    private final MemberRepository memberRepository;
 
+    private final MemberRepository memberRepository;
 
     // 가입 (저장)
     public Member join(Member member) {
@@ -37,4 +37,9 @@ public class MemberService {
     public List<Member> findMembers() {
 		return memberRepository.findAll();
 	}
+
+    public Member login(String email, String password) {
+        return memberRepository.findByEmail(email).filter(m -> m.getPassword().equals(password))
+                .orElse(null);
+    }
 }
