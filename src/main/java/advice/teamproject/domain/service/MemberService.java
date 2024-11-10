@@ -38,6 +38,7 @@ public class MemberService {
 		return memberRepository.findAll();
 	}
 
+    // 없으면 null 반환
     public Member login(String email, String password) {
         return memberRepository.findByEmail(email).filter(m -> m.getPassword().equals(password))
                 .orElse(null);

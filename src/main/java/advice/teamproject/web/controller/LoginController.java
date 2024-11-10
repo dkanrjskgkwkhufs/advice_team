@@ -30,12 +30,14 @@ public class LoginController {
     @PostMapping("/login")
     public String login(@Valid @ModelAttribute LoginForm loginForm, BindingResult bindingResult, HttpServletRequest request) {
 
+        // empty 잡기
         if (bindingResult.hasErrors()) {
             return "login";
         }
 
         Member loginMember = memberService.login(loginForm.getEmail(), loginForm.getPassword());
 
+        // email 로 찾은 객체.password 랑 입력한 password 가 같은지 확인
         if (loginMember == null) {
             bindingResult.reject("loginFail", "이메일 또는 비밀번호가 맞지 않습니다.");
             return "login";
