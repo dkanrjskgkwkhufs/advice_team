@@ -10,11 +10,19 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Post {
+public class Post{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String content;
     private String authorEmail;
+
+    public Post() {
+    }
+
+    public Post(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }

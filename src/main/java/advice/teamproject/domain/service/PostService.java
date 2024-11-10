@@ -3,6 +3,7 @@ package advice.teamproject.domain.service;
 
 import advice.teamproject.domain.entity.Post;
 import advice.teamproject.domain.repository.post.PostRepository;
+import advice.teamproject.dto.PostForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
