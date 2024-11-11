@@ -1,4 +1,3 @@
-<!-- templates/post/posts.html -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
@@ -20,5 +19,10 @@
             </li>
         </ul>
     </div>
+
+    <!-- 로그아웃 폼 -->
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">로그아웃</button>
+    </form>
 </body>
 </html>

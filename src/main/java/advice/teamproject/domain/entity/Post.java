@@ -1,11 +1,11 @@
 package advice.teamproject.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -17,6 +17,9 @@ public class Post{
     private String title;
     private String content;
     private String authorEmail;
+    private int maxParticipants;
+    @OneToMany
+    private Set<Member> members;
 
     public Post() {
     }

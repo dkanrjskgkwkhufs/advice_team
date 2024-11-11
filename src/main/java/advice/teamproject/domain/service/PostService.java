@@ -1,9 +1,9 @@
 package advice.teamproject.domain.service;
 
 
+import advice.teamproject.domain.entity.Member;
 import advice.teamproject.domain.entity.Post;
 import advice.teamproject.domain.repository.post.PostRepository;
-import advice.teamproject.dto.PostForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -43,5 +43,25 @@ public class PostService {
             post.setContent(updateParam.getContent());
             postRepository.save(post);
         }
+    }
+
+    public void addParticipants(Long postId, Member member) {
+        log.info("Adding participants to post {}", postId);
+        Optional<Post> postOptional = postRepository.findById(postId);
+        if (postOptional.isPresent()) {
+            Post post = postOptional.get();
+            post.getMembers().add(member);
+            postRepository.save(post);
+        }
+    }
+
+    // 참가 버튼 여유 있는지 없는지(이것도 Post 가 가지고 있는게 맞는거 같기도 하고..) TODO
+    public boolean hasSpaceForParticipants(Long PostID) {
+        Optional<Post> postOptional = postRepository.findById(PostID);
+        if (postOptional.isPresent()) {
+            Post post = postOptional.get();
+            return post.getMaxParticipants() > post.getMembers().size();
+        }
+        return false; // 예외처리 넣어야됨
     }
 }

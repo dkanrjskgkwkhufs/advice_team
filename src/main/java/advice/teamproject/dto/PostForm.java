@@ -15,4 +15,16 @@ public class PostForm {
 
     @NotEmpty
     private String content;
+
+    @NotEmpty
+    private int maxParticipants;
+
+    public PostForm() {
+
+    }
+    public PostForm(String title, String content, int maxParticipants) {
+        this.title = title;
+        this.content = content;
+        this.maxParticipants = maxParticipants;
+    }
 }

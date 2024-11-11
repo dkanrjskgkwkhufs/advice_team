@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Slf4j
 @Controller
@@ -33,15 +34,25 @@ public class PostController {
         return "/post/posts";
     }
 
-
-    // 게시글 상세 페이지
+    // 게시글 상세 페이지 (리팩토링 1순위) TODO
     @GetMapping("/{postId}")
-    public String viewPost(@PathVariable Long postId, Model model) {
+    public String viewPost(@SessionAttribute(name = "loginMember", required = false) Member loginMember, @PathVariable Long postId, Model model) {
 
-        Optional<Post> post = postService.findPost(postId);
-        if (post.isPresent()) {
-            model.addAttribute("post", post.get());
+        Optional<Post> postOptional = postService.findPost(postId);
+        if (postOptional.isPresent()) {
+            Post post = postOptional.get();
+            // 만약에 참여버튼을 눌렀거나, 자리가 있는 경우만
+            Set<Member> participants = post.getMembers();
+            if (participants.contains(loginMember) || postService.hasSpaceForParticipants(postId)) {
+                model.addAttribute("post", post);
+            } else {
+                // 여기서 null 넣지 말고 예외메시지 하기 TODO
+                // 참여 자리가 가득 찼습니다.
+                model.addAttribute("post", null);
+            }
         } else {
+            // 여기서 null 넣지 말고 예외메시지 하기 TODO
+            // 없는 게시물입니다.
             model.addAttribute("post", null);
         }
         return "/post/post"; // 템플릿 리턴
@@ -50,7 +61,8 @@ public class PostController {
 
     // 게시글 추가 폼
     @GetMapping("/add")
-    public String addPostForm() {
+    public String addPostForm(Model model) {
+        model.addAttribute("postForm", new PostForm());
         return "/post/addForm";
     }
 
@@ -63,15 +75,16 @@ public class PostController {
             return "redirect:/login";
         }
 
-        // postForm 은 제목이랑, 내용만 있기 때문에, post 를 새로 만들어서 넣어줌 + email 도 넣음(작성자를 기억하기 위함)
+        // postForm 은 제목이랑, 내용만 있기 때문에, post 를 새로 만들어서 넣어줌 + email + maxParticipants 도 넣음(작성자를 기억하기 위함)
         Post post = new Post(postForm.getTitle(), postForm.getContent());
         post.setAuthorEmail(loginMember.getEmail());
+        post.setMaxParticipants(postForm.getMaxParticipants());
 
         Post savedPost = postService.save(post);
         return "redirect:/posts/" + savedPost.getId();
     }
 
-    // 게시글 수정 폼
+    // 게시글 수정 폼 (이거 설정 인원도 수정할 수 있게 해야되긴 해;; ) TODO
     @GetMapping("/{postId}/edit")
     public String editPostForm(@SessionAttribute(name = "loginMember", required = false) Member loginMember, @PathVariable Long postId, Model model) {
 
@@ -93,6 +106,17 @@ public class PostController {
     public String updatePost(@PathVariable Long postId, PostForm postForm) {
         Post post = new Post(postForm.getTitle(), postForm.getContent());
         postService.editPost(postId, post);
+        return "redirect:/posts/" + postId;
+    }
+
+
+    // 참여버튼 눌렀을 때
+    @PostMapping("/{postId}/participate")
+    public String participatePost(@SessionAttribute(name = "loginMember", required = false) Member loginMember, @PathVariable Long postId) {
+        if (loginMember == null) {
+            return "redirect:/login";
+        }
+        postService.addParticipants(postId, loginMember);
         return "redirect:/posts/" + postId;
     }
 }
