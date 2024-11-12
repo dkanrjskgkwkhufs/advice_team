@@ -35,4 +35,11 @@ public class MemoryPostRepository implements PostRepository {
     public List<Post> findAll() {
         return new ArrayList<>(store.values());
     }
+
+    @Override
+    public void deleteById(Long id) {
+        store.remove(id);
+    }
+
+
 }

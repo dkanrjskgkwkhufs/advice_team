@@ -55,7 +55,11 @@ public class PostService {
         }
     }
 
+    public void deletePost(Long postId) {
+        postRepository.deleteById(postId);
+    }
     // 참가 버튼 여유 있는지 없는지(이것도 Post 가 가지고 있는게 맞는거 같기도 하고..) TODO
+
     public boolean hasSpaceForParticipants(Long PostID) {
         Optional<Post> postOptional = postRepository.findById(PostID);
         if (postOptional.isPresent()) {

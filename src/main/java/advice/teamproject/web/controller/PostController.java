@@ -101,7 +101,7 @@ public class PostController {
         return "/post/editForm";
     }
 
-    // 게시글 수정
+    // 게시글 수정 (이때, 참가인원 제한도 고칠수 있게 할건지 결정) TODO
     @PostMapping("/{postId}/edit")
     public String updatePost(@PathVariable Long postId, PostForm postForm) {
         Post post = new Post(postForm.getTitle(), postForm.getContent());
@@ -109,6 +109,17 @@ public class PostController {
         return "redirect:/posts/" + postId;
     }
 
+    @PostMapping("/{postId}/delete")
+    public String deletePost(@SessionAttribute(name = "loginMember", required = false) Member loginMember, @PathVariable Long postId) {
+        // 게시글이 존재하고, 작가와 삭제하려는 사람이 같은지 확인
+        Optional<Post> postoptional = postService.findPost(postId);
+        if (postoptional.isPresent() && postoptional.get().getAuthorEmail().equals(loginMember.getEmail())) {
+            postService.deletePost(postId);
+        } else {
+            return "redirect:/posts/" + postId;
+        }
+        return "redirect:/posts";
+    }
 
     // 참여버튼 눌렀을 때
     @PostMapping("/{postId}/participate")
