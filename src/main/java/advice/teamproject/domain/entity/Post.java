@@ -18,6 +18,7 @@ public class Post{
     private String content;
     private String authorEmail;
     private int maxParticipants;
+    // 이거 안하면 한사람이 하나의 게시물에만 participants 할 수 있음
     @ManyToMany
     @JoinTable(
         name = "post_members",

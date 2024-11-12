@@ -48,14 +48,4 @@ public class RegisterController {
         }
         return "signupComplete";
     }
-
-
-    // 지울 것 test용
-    @GetMapping("/list")
-    public String view(Model model) {
-        List<Member> members = memberService.findMembers();
-        model.addAttribute("members", members);
-
-        return "/test/memberList";
-    }
 }
