@@ -19,6 +19,9 @@ public class PostForm {
     @NotEmpty
     private int maxParticipants;
 
+    @NotEmpty
+    private String theme;
+
     public PostForm() {
 
     }

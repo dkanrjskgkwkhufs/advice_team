@@ -20,6 +20,7 @@ public class Post{
     private int maxParticipants;
     @OneToMany
     private Set<Member> members;
+    private String theme;
 
     public Post() {
     }

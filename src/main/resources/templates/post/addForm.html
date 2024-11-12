@@ -10,6 +10,12 @@
     <label>제목: <input type="text" name="title" th:field="*{title}"></label><br>
     <label>내용: <textarea name="content" th:field="*{content}"></textarea></label><br>
     <label>참여 제한 인원: <input type="number" name="maxParticipants" th:field="*{maxParticipants}"></label><br>
+    <label>게시판 선택:
+        <select name="theme" th:field="*{theme}">
+            <option value="indoor">실내취미 게시판</option>
+            <option value="outdoor">야외취미 게시판</option>
+        </select>
+    </label><br>
     <button type="submit">저장</button>
 </form>
 <a href="/posts">목록으로</a>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 목록</title>
+</head>
+<body>
+    <h1>게시판 목록</h1>
+
+    <a href="/posts?theme=indoor">실내 취미 게시판</a>
+    <a href="/posts?theme=outdoor">야외 취미 게시판</a>
+    <a href="/posts">전체 게시판</a> <!-- theme 파라미터 없이 전체 게시글 조회 -->
+
+
+
+    <!-- 로그인 및 회원가입 버튼 -->
+    <a href="/login">로그인</a>
+    <a href="/signup">회원가입</a>
+
+    <!-- 로그아웃 폼 -->
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">로그아웃</button>
+    </form>
+</body>
+</html>

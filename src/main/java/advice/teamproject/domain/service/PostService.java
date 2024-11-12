@@ -3,6 +3,7 @@ package advice.teamproject.domain.service;
 
 import advice.teamproject.domain.entity.Member;
 import advice.teamproject.domain.entity.Post;
+import advice.teamproject.domain.repository.post.DbPostRepository;
 import advice.teamproject.domain.repository.post.PostRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +17,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class PostService {
 
-    private final PostRepository postRepository;
+    //private final PostRepository postRepository;
+    private final DbPostRepository postRepository;
 
     // 게시물 저장하기
     public Post save(Post post) {
@@ -33,8 +35,13 @@ public class PostService {
         return postRepository.findAll();
     }
 
+    // 테마로 조회
+    public List<Post> findPostsByTheme(String theme) {
+        return postRepository.findByTheme(theme);
+    }
     // 게시물 수정하기
     // updateParam 을 받아서 그 내용으로 수정한 다음에 다시 저장
+
     public void editPost(Long postId, Post updateParam) {
         Optional<Post> postOptional = postRepository.findById(postId);
         if (postOptional.isPresent()) {
@@ -45,8 +52,8 @@ public class PostService {
         }
     }
 
+    // 한 Member가 한번에 하나의 게시물에만 참여 버튼을 누를 수 있도록 변경 TODO(아니면 db 설정 바꿔야됨)
     public void addParticipants(Long postId, Member member) {
-        log.info("Adding participants to post {}", postId);
         Optional<Post> postOptional = postRepository.findById(postId);
         if (postOptional.isPresent()) {
             Post post = postOptional.get();
@@ -54,12 +61,11 @@ public class PostService {
             postRepository.save(post);
         }
     }
-
     public void deletePost(Long postId) {
         postRepository.deleteById(postId);
     }
-    // 참가 버튼 여유 있는지 없는지(이것도 Post 가 가지고 있는게 맞는거 같기도 하고..) TODO
 
+    // 참가 버튼 여유 있는지 없는지(이것도 Post 가 가지고 있는게 맞는거 같기도 하고..) TODO
     public boolean hasSpaceForParticipants(Long PostID) {
         Optional<Post> postOptional = postRepository.findById(PostID);
         if (postOptional.isPresent()) {
@@ -68,4 +74,5 @@ public class PostService {
         }
         return false; // 예외처리 넣어야됨
     }
+
 }

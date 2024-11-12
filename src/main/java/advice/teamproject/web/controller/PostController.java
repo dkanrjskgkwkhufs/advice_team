@@ -25,11 +25,20 @@ public class PostController {
 
     // 여기다가 로그인 되어있는지 확인하는 로직 listPosts 랑 viewPost 중에어디에 넣을지 투표 ㄱㄱ
 
-    // 목록 페이지
+    // 게시글 목록
     @GetMapping
-    public String listPosts(Model model) {
+    public String listPosts(@SessionAttribute(name = "loginMember", required = false) Member loginMember,
+                            @RequestParam(value = "theme", required = false) String theme, Model model) {
+        if (loginMember == null) {
+            return "redirect:/login";
+        }
 
-        List<Post> posts = postService.findPosts();
+        List<Post> posts;
+        if (theme != null && !theme.isEmpty()) {
+            posts = postService.findPostsByTheme(theme);
+        } else {
+            posts = postService.findPosts();
+        }
         model.addAttribute("posts", posts);
         return "/post/posts";
     }
@@ -79,6 +88,7 @@ public class PostController {
         Post post = new Post(postForm.getTitle(), postForm.getContent());
         post.setAuthorEmail(loginMember.getEmail());
         post.setMaxParticipants(postForm.getMaxParticipants());
+        post.setTheme(postForm.getTheme());
 
         Post savedPost = postService.save(post);
         return "redirect:/posts/" + savedPost.getId();

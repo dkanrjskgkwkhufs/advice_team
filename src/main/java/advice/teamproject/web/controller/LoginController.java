@@ -46,7 +46,7 @@ public class LoginController {
         HttpSession session = request.getSession();// 세션이 없으면 만듬
         session.setAttribute("loginMember", loginMember);
 
-        return "redirect:/posts";
+        return "/board";
     }
 
     @PostMapping("/logout")
@@ -55,6 +55,6 @@ public class LoginController {
         if (session != null) {
             session.invalidate();
         }
-        return "redirect:/login";
+        return "redirect:/board";
     }
 }
