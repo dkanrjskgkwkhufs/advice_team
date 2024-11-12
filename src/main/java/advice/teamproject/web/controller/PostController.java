@@ -103,10 +103,9 @@ public class PostController {
         if (postoptional.isPresent() && postoptional.get().getAuthorEmail().equals(loginMember.getEmail())) {
             model.addAttribute("post", postoptional.get());
         } else {
-            // 지금은 500에러 뜸
             // 이부분에 , 글로벌 에러 만드는거 (작성자만 수정할 수 있습니다.) 이렇게 띄우기
             // 그리고 posts 로 redirect
-            model.addAttribute("post", null);
+            return "redirect:/posts/" + postId;
         }
         return "/post/editForm";
     }
@@ -126,6 +125,7 @@ public class PostController {
         if (postoptional.isPresent() && postoptional.get().getAuthorEmail().equals(loginMember.getEmail())) {
             postService.deletePost(postId);
         } else {
+            // 이부분에도 작성자만 할 수 있다고 하기
             return "redirect:/posts/" + postId;
         }
         return "redirect:/posts";
