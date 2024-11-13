@@ -1,0 +1,505 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.v3_253 {
+  width: 100%;
+  height: 810px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v78_17 {
+  width: 100%;
+  height: 810px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v7_3 {
+  width: 405px;
+  height: 650px;
+  background: url("../images/v7_3.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 55px;
+  left: 517px;
+  overflow: hidden;
+}
+.backSyetem {
+  width: 55px;
+  height: 20px;
+  background: url("../images/v3_322.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  overflow: hidden;
+}
+.backBackGround {
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.backIcon {
+  width: 20px;
+  height: 20px;
+  
+  opacity: 1;
+  position: absolute;
+  
+  background: url("/image/signup/넘어가기 아이콘.png");
+}
+.backtext {
+  width: 50px;
+  color: rgba(71,26,160,1);
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 12px;
+  opacity: 1;
+  text-align: left;
+}
+.v3_292 {
+  width: 405px;
+  height: 600px;
+  background: rgba(255,255,255,0.699999988079071);
+  opacity: 1;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  border: 2px solid rgba(0,0,0,1);
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+}
+.v38_5712 {
+  width: 100px;
+  height: 100px;
+  background: url("../images/v38_5712.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 483px;
+  left: 40px;
+  overflow: hidden;
+}
+.logInButton {
+  width: 358px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 565px;
+  left: 24px;
+  overflow: hidden;
+}
+.v3_306 {
+  width: 358px;
+  height: 50px;
+  background: rgba(187,132,232,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.v3_307 {
+  width: 60px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 16px;
+  left: 149px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v38_5703 {
+  width: 223px;
+  height: 48px;
+  background: url("../images/v38_5703.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 500px;
+  left: 24px;
+  overflow: hidden;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.v38_5702 {
+  width: 200px;
+  height: 16px;
+  background: url("../images/v38_5702.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 17px;
+  left: 0px;
+  overflow: hidden;
+}
+.v38_5678 {
+  width: 70px;
+  color: rgba(0,0,0,1);
+  position: relative;
+  top: -2px;
+  left: 0px;
+  font-family: Roboto;
+  font-weight: Medium;
+  font-size: 11px;
+  opacity: 1;
+  text-align: right;
+}
+.v38_5679 {
+  width: 80px;
+  color: rgba(0,0,0,1);
+  position: relative;
+  top: -2px;
+  left: 0px;
+  font-family: Roboto;
+  font-weight: Medium;
+  font-size: 11px;
+  opacity: 1;
+  text-align: right;
+}
+.v3_315 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_315.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 433px;
+  left: 24px;
+  overflow: hidden;
+}
+.v3_316 {
+  width: 18px;
+  height: 20px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 15px;
+  left: 331px;
+  overflow: hidden;
+}
+.hiddenIcon1 {
+  width: 19px;
+  height: 20px;
+  background: url("/image/signup/가리기\ 아이콘.png");
+  opacity: 1;
+  position: absolute;
+  
+}
+.v3_318 {
+  width: 27px;
+  height: 30px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  left: 9px;
+  overflow: hidden;
+}
+.v3_319 {
+  width: 20px;
+  height: 27px;
+  background: url("/image/signup/Vector.png");
+  opacity: 1;
+  position: absolute;
+  left: 5px;
+}
+.v3_320 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_320.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 2px solid rgba(151,71,255,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+.v3_321 {
+  width: 200px;
+  color: rgba(0,0,0,0.30000001192092896);
+  position: absolute;
+  top: 16px;
+  left: 54px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+.v3_308 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_308.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 347px;
+  left: 24px;
+  overflow: hidden;
+}
+.v3_309 {
+  width: 18px;
+  height: 20px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 15px;
+  left: 331px;
+  overflow: hidden;
+}
+.hiddenIcon2 {
+  width: 20px;
+  height: 20px;
+  background: url("/image/signup/가리기\ 아이콘.png");
+  opacity: 1;
+  position: absolute;
+}
+.v3_311 {
+  width: 27px;
+  height: 30px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  left: 9px;
+  overflow: hidden;
+}
+.v3_312 {
+  width: 20px;
+  height: 27px;
+  background: url("/image/signup/Vector.png");
+  opacity: 1;
+  position: absolute;
+  left: 5px;
+  
+}
+.v3_313 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_313.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 2px solid rgba(151,71,255,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+.v3_314 {
+  width: 200px;
+  color: rgba(0,0,0,0.30000001192092896);
+  position: absolute;
+  top: 16px;
+  left: 54px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+.v3_300 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_300.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 261px;
+  left: 24px;
+  overflow: hidden;
+}
+.v3_301 {
+  width: 27px;
+  height: 30px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  overflow: hidden;
+}
+.v3_302 {
+  width: 28px;
+  height: 30px;
+  background: url("/image/signup/메일 아이콘.png");
+  opacity: 1;
+  position: absolute;
+  left: 1px;
+  
+}
+.v3_303 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_303.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 2px solid rgba(151,71,255,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+.v3_304 {
+  width: 200px;
+  color: rgba(0,0,0,0.30000001192092896);
+  position: absolute;
+  top: 16px;
+  left: 54px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+.v3_295 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_295.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 175px;
+  left: 24px;
+  overflow: hidden;
+}
+.v3_296 {
+  width: 27px;
+  height: 30px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  overflow: hidden;
+}
+.v3_297 {
+  background: url("/image/signup/아이디 아이콘.png");
+  width: 28px;
+  height: 30px;
+  opacity: 1;
+  position: absolute;
+  
+}
+.v3_298 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_298.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 2px solid rgba(151,71,255,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+.v3_299 {
+  width: 200px;
+  color: rgba(0,0,0,0.30000001192092896);
+  position: absolute;
+  top: 16px;
+  left: 54px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+.v3_294 {
+  width: 123px;
+  color: rgba(71,26,160,1);
+  position: absolute;
+  top: 98px;
+  left: 24px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}
