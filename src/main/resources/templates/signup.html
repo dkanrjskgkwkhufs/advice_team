@@ -1,56 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+    <link href="/css/signup.css" rel="stylesheet"/>
     <title>회원가입</title>
-    <link rel="stylesheet"> <!-- Add the path to your Bootstrap CSS file -->
 </head>
 <body>
-<div>
-    <div>
-        <div class="kk">
-            <h4>회원가입</h4>
+<form th:action="@{/signup}" th:method="post" th:object="${member}" onsubmit="return validateForm()">
+    <!-- 글로벌 에러 메시지 표시 영역 -->
+    <div id="signupFailed" class="text-danger" th:if="${#fields.hasGlobalErrors()}">
+        <ul>
+            <li th:each="err : ${#fields.globalErrors}" th:text="${err}"></li>
+        </ul>
+    </div>
+
+    <!-- 클라이언트 측 에러 메시지를 한 곳에서 표시할 div -->
+    <div id="errorMessages" class="text-danger"></div>
+
+    <div class="v3_253">
+        <div class="v78_17">
+
+        </div>
+        <div class="v7_3">
+            <a href="/login">
+                <div class="backSystem">
+                    <div class="backBackGround">
+                        <div class="backIcon">
+
+                        </div>
+                    </div>
+
+                    <span class="backtext">Log In</span>
+                </div>
+            </a>
+            <div class="v3_292">
+
+            </div>
+            <div class="v38_5712">
+
+            </div>
+            <div class="v3_295">
+                <div class="v3_296">
+                    <div class="v3_297">
+
+                    </div>
+                </div>
+                <div class="v3_298">
+
+                </div>
+                <input class="v3_299" type="text" placeholder="사용자이름" id="username" name="username" required>
+            </div>
+
+            <div class="v3_300">
+                <div class="v3_301">
+                    <div class="v3_302">
+
+                    </div>
+                </div>
+                <div class="v3_303">
+
+                </div>
+                <input class="v3_304" type="email" placeholder="이메일" id="email" name="email" required>
+            </div>
+
+            <div class="v3_308">
+                <div class="v3_309">
+                    <div class="hiddenIcon2">
+
+                    </div>
+                </div>
+                <div class="v3_311">
+                    <div class="v3_312">
+
+                    </div>
+                </div>
+                <div class="v3_313">
+
+                </div>
+                <input class="v3_314" type="password" placeholder="비밀번호" id="password1" name="password" required>
+            </div>
+
+            <div class="v3_315">
+                <div class="v3_316">
+                    <div class="hiddenIcon1">
+
+                    </div>
+                </div>
+                <div class="v3_318">
+                    <div class="v3_319">
+
+                    </div>
+                </div>
+                <div class="v3_320">
+
+                </div>
+                <input class="v3_321" type="password" placeholder="비밀번호 확인" id="password2" name="password1"
+                       required>
+            </div>
+
+            <div class="v38_5703">
+                <div class="name">
+
+                </div>
+                <div class="name">
+
+                </div>
+                <div class="v38_5702">
+                    <input type="radio" style="position: relative;" id="G" name="campus" value="G" onclick='checkOnlyOne(this)'
+                           required>
+                    <label class="v38_5678" for="G">글로벌 캠퍼스</label>
+                    <input type="radio" style="position: relative;" id="S" name="campus" value="S" onclick='checkOnlyOne(this)'
+                           required>
+                    <label class="v38_5679" for="S">서울 캠퍼스</label>
+                </div>
+            </div>
+
+            <div class="logInButton">
+                <button type="submit" class="v3_306" value=" ">
+                    <span class="v3_307">Sign up</span>
+                </button>
+
+
+            </div>
+
+            <span class="v3_294">Sign Up</span>
         </div>
     </div>
-    <form th:action="@{/signup}" th:method="post" th:object="${member}" onsubmit="return validateForm()">
-        <div>
-            <label for="username">사용자이름</label>
-            <input type="text" id="username" name="username" class="form-control">
-        </div>
-        <div>
-            <label for="password1">비밀번호</label>
-            <input type="password" id="password1" name="password" class="form-control">
-        </div>
-        <div>
-            <label for="password2">비밀번호 확인</label>
-            <input type="password" id="password2" name="password1">
-        </div>
-        <div>
-            <label for="email">이메일</label>
-            <input type="email" id="email" name="email" class="form-control">
-        </div>
-        <div>
-            <h6>캠퍼스 선택</h6>
-            <label for="S">서울 캠퍼스</label>
-            <input type="radio" name="campus" id="S" value="S">
-            <label for="G">글로벌 캠퍼스</label>
-            <input type="radio" name="campus" id="G" value="G">
-        </div>
-
-        <!-- 글로벌 에러 메시지 표시 영역 -->
-        <div id="signupFailed" class="text-danger" th:if="${#fields.hasGlobalErrors()}">
-            <ul>
-                <li th:each="err : ${#fields.globalErrors}" th:text="${err}"></li>
-            </ul>
-        </div>
-
-        <!-- 클라이언트 측 에러 메시지를 한 곳에서 표시할 div -->
-        <div id="errorMessages" class="text-danger"></div>
-
-        <button type="submit">회원가입</button>
-    </form>
-</div>
-
+</form>
 <script>
     // 폼 검증 함수
     function validateForm() {

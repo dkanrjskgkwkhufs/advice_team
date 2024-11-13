@@ -143,7 +143,7 @@ body {
   overflow: hidden;
 }
 .eyes {
-  background-image: url("../images/가리기 아이콘.png");
+  background-image: url("/image/login/가리기 아이콘.png");
   width: 20px;
   height: 19px;
   cursor: pointer;
@@ -162,7 +162,7 @@ body {
   overflow: hidden;
 }
 .v3_275 {
-  background-image: url("../images/비번 아이콘.png");
+  background-image: url("/image/login/비번 아이콘.png");
   width: 30px;
   height: 28px;
   
@@ -226,7 +226,7 @@ body {
   overflow: hidden;
 }
 .v3_265 {
-  background-image: url("../images/메일 아이콘.png");
+  background-image: url("/image/login/메일 아이콘.png");
   width: 30px;
   height: 28px;
   
