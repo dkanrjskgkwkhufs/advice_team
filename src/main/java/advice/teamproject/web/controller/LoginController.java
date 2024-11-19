@@ -3,7 +3,7 @@ package advice.teamproject.web.controller;
 
 import advice.teamproject.domain.entity.Member;
 import advice.teamproject.domain.service.MemberService;
-import advice.teamproject.dto.LoginForm;
+import advice.teamproject.domain.dto.LoginForm;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;

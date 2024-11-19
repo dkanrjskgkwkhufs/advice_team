@@ -1,10 +1,10 @@
 package advice.teamproject.domain.service;
 
 
+import advice.teamproject.domain.entity.Comment;
 import advice.teamproject.domain.entity.Member;
 import advice.teamproject.domain.entity.Post;
 import advice.teamproject.domain.repository.post.DbPostRepository;
-import advice.teamproject.domain.repository.post.PostRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -52,7 +52,6 @@ public class PostService {
         }
     }
 
-    // 한 Member가 한번에 하나의 게시물에만 참여 버튼을 누를 수 있도록 변경 TODO(아니면 db 설정 바꿔야됨)
     public void addParticipants(Long postId, Member member) {
         Optional<Post> postOptional = postRepository.findById(postId);
         if (postOptional.isPresent()) {
@@ -73,6 +72,16 @@ public class PostService {
             return post.getMaxParticipants() > post.getMembers().size();
         }
         return false; // 예외처리 넣어야됨
+    }
+
+    public void addComment(Long postId, Comment comment) {
+        Optional<Post> postOptional = postRepository.findById(postId);
+        if (postOptional.isPresent()) {
+            Post post = postOptional.get();
+            comment.setPost(post); // 이거 리팩토링 하고 싶다.
+            post.getComments().add(comment);
+            postRepository.save(post);
+        }
     }
 
 }

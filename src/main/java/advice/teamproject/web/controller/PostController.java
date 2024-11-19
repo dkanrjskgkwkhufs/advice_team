@@ -1,16 +1,18 @@
 package advice.teamproject.web.controller;
 
 
+import advice.teamproject.domain.entity.Comment;
 import advice.teamproject.domain.entity.Member;
 import advice.teamproject.domain.entity.Post;
 import advice.teamproject.domain.service.PostService;
-import advice.teamproject.dto.PostForm;
+import advice.teamproject.domain.dto.PostForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -36,6 +38,7 @@ public class PostController {
         } else {
             posts = postService.findPosts();
         }
+        posts.sort(Comparator.comparing(Post::getId).reversed());
         model.addAttribute("posts", posts);
         return "/post/posts";
     }
@@ -60,7 +63,7 @@ public class PostController {
             // 없는 게시물 입니다.
             model.addAttribute("errorMessage", "없는 게시물입니다.");
         }
-        return "/post/post";
+        return "post/post";
     }
 
     // 게시글 추가 폼
@@ -106,7 +109,7 @@ public class PostController {
         } else {
             model.addAttribute("errorMessage", "없는 게시물입니다.");
         }
-        return "/post/post";
+        return "post/post";
     }
 
     // 게시글 수정
@@ -138,6 +141,14 @@ public class PostController {
             return "redirect:/login";
         }
         postService.addParticipants(postId, loginMember);
+        return "redirect:/posts/" + postId;
+    }
+
+
+    @PostMapping("/{postId}/comment")
+    public String addComment(@SessionAttribute(name="loginMember") Member loginMember, @ModelAttribute Comment comment, @PathVariable Long postId, Model model) {
+        comment.setAuthorEmail(loginMember.getEmail());
+        postService.addComment(postId, comment);
         return "redirect:/posts/" + postId;
     }
 }

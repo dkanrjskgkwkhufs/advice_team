@@ -1,4 +1,4 @@
-package advice.teamproject.dto;
+package advice.teamproject.domain.dto;
 
 
 import jakarta.validation.constraints.NotEmpty;
