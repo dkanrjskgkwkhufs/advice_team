@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+    <link href="/css/signup.css" rel="stylesheet"/>
+    <title>회원가입</title>
+</head>
+<body>
+<form th:action="@{/signup}" th:method="post" th:object="${member}" onsubmit="return validateForm()">
+    <!-- 글로벌 에러 메시지 표시 영역 -->
+    <div id="signupFailed" class="text-danger" th:if="${#fields.hasGlobalErrors()}">
+        <ul>
+            <li th:each="err : ${#fields.globalErrors}" th:text="${err}"></li>
+        </ul>
+    </div>
+
+    <!-- 클라이언트 측 에러 메시지를 한 곳에서 표시할 div -->
+    <div id="errorMessages" class="text-danger"></div>
+
+    <div class="v3_253">
+        <div class="v78_17">
+
+        </div>
+        <div class="v7_3">
+            <a href="/login">
+                <div class="backSystem">
+                    <div class="backBackGround">
+                        <div class="backIcon">
+
+                        </div>
+                    </div>
+
+                    <span class="backtext">Log In</span>
+                </div>
+            </a>
+            <div class="v3_292">
+
+            </div>
+            <div class="v38_5712">
+
+            </div>
+            <div class="v3_295">
+                <div class="v3_296">
+                    <div class="v3_297">
+
+                    </div>
+                </div>
+                <div class="v3_298">
+
+                </div>
+                <input class="v3_299" type="text" placeholder="사용자이름" id="username" name="username" required>
+            </div>
+
+            <div class="v3_300">
+                <div class="v3_301">
+                    <div class="v3_302">
+
+                    </div>
+                </div>
+                <div class="v3_303">
+
+                </div>
+                <input class="v3_304" type="email" placeholder="이메일" id="email" name="email" required>
+            </div>
+
+            <div class="v3_308">
+                <div class="v3_309">
+                    <div class="hiddenIcon2">
+
+                    </div>
+                </div>
+                <div class="v3_311">
+                    <div class="v3_312">
+
+                    </div>
+                </div>
+                <div class="v3_313">
+
+                </div>
+                <input class="v3_314" type="password" placeholder="비밀번호" id="password1" name="password" required>
+            </div>
+
+            <div class="v3_315">
+                <div class="v3_316">
+                    <div class="hiddenIcon1">
+
+                    </div>
+                </div>
+                <div class="v3_318">
+                    <div class="v3_319">
+
+                    </div>
+                </div>
+                <div class="v3_320">
+
+                </div>
+                <input class="v3_321" type="password" placeholder="비밀번호 확인" id="password2" name="password1"
+                       required>
+            </div>
+
+            <div class="v38_5703">
+                <div class="name">
+
+                </div>
+                <div class="name">
+
+                </div>
+                <div class="v38_5702">
+                    <input type="radio" style="position: relative;" id="S" name="campus" value="S" onclick='checkOnlyOne(this)'
+                           required>
+                    <label for="S">서울 캠퍼스</label>
+                    <input type="radio" style="position: relative;" id="G" name="campus" value="G" onclick='checkOnlyOne(this)'
+                           required>
+                    <label for="G">글로벌 캠퍼스</label>
+                </div>
+            </div>
+
+            <div class="logInButton">
+                <button type="submit" class="v3_306" value=" ">
+                    <span class="v3_307">Sign up</span>
+                </button>
+
+
+            </div>
+
+            <span class="v3_294">Sign Up</span>
+        </div>
+    </div>
+</form>
+<script>
+    function validateForm(event) {
+        const errorDiv = document.getElementById("errorMessages");
+        errorDiv.innerHTML = ""; // 에러 메시지 초기화
+
+        const username = document.getElementById("username").value.trim();
+        const password1 = document.getElementById("password1").value.trim();
+        const password2 = document.getElementById("password2").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const campus = document.querySelector('input[name="campus"]:checked');
+        const errorMessages = [];
+
+        // 사용자 이름 검증
+        if (!username) {
+            errorMessages.push("사용자 이름을 입력해주세요.");
+        }
+
+        // 이메일 형식 검증
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) {
+            errorMessages.push("이메일을 입력해주세요.");
+        } else if (!emailPattern.test(email)) {
+            errorMessages.push("유효한 이메일 주소를 입력해주세요.");
+        }
+
+        // 비밀번호 검증
+        if (password1.length < 8) {
+            errorMessages.push("비밀번호는 최소 8자 이상이어야 합니다.");
+        }
+
+        if (password1 !== password2) {
+            errorMessages.push("비밀번호가 일치하지 않습니다.");
+        }
+
+        // 캠퍼스 선택 검증
+        if (!campus) {
+            errorMessages.push("캠퍼스를 선택해주세요.");
+        }
+
+        // 에러 메시지가 있을 경우
+        if (errorMessages.length > 0) {
+            event.preventDefault(); // 폼 제출 방지
+            errorDiv.innerHTML = errorMessages.map(msg => `<div>${msg}</div>`).join("");
+            return false;
+        }
+
+        return true; // 폼 제출 허용
+    }
+</script>
+</body>
+</html>

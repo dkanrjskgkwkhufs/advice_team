@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>회원 가입</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>회원 가입 정보</h1>
+
+    <div>
+        <h2>회원 정보</h2>
+        <p><strong>사용자 이름:</strong> <span th:text="${member.username}">사용자 이름</span></p>
+        <p><strong>이메일:</strong> <span th:text="${member.email}">이메일</span></p>
+        <p><strong>페스워드:</strong> <span th:text="${member.password}">비밀번호</span></p>
+        <p><strong>캠퍼스:</strong> <span th:text="${member.campus}">캠퍼스</span></p>
+    </div>
+
+    <div>
+        <a href="/login">로그인 페이지로 돌아가기</a>
+    </div>
+</body>
+</html>

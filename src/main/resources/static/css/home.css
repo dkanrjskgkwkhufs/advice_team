@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.v3_251 {
+  width: 100%;
+  height: 2600px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v30_12 {
+  width: 100%;
+  height: 70px;
+  background: url("../images/v30_12.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.30000001192092896);
+  overflow: hidden;
+  border-radius: 15px;
+}
+.v3_289 {
+  width: 100%;
+  height: 70px;
+  background: rgba(208,188,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v31_33 {
+  width: 188px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 15px;
+  left: 23px;
+  font-family: Lato;
+  font-weight: Regular;
+  font-size: 34px;
+  opacity: 1;
+  text-align: left;
+}
+.signupModule {
+  width: 90px;
+  height: 35px;
+  background: url("../images/v30_11.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 18px;
+  left: 1310px;
+  overflow: hidden;
+}
+.signupbox {
+  width: 90px;
+  height: 35px;
+  background: rgba(101,85,143,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  
+}
+.signup {
+  width: 90px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 7px;
+  left: 0px;
+  font-family: Lato;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+  cursor: pointer;
+}
+.hover-background {
+  background: rgb(52, 7, 165) !important; /* 변경할 배경색 */
+}
+.v30_7 {
+  width: 90px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 28px;
+  left: 1225px;
+  font-family: Lato;
+  font-weight: Regular;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}
+.v102_147 {
+  width: 90px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 23px;
+  left: 1225px;
+  font-family: Lato;
+  font-weight: Regular;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}
+.name {
+  color: #fff;
+}
+.mainimage {
+  width: 100%;
+  height: 100%;
+  background: url("/image/home/v55_14.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  opacity: 1;
+  position: cover;
+  /*top: 70px;
+  left: 20px;*/
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom , rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.v90_141 {
+  width: 512px;
+  height: 350px;
+  
+  opacity: 1;
+  position: absolute;
+  top: 900px;
+  left: 120px;
+  overflow: hidden;
+  background: rgba(217, 217, 217, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.gitaImg {
+  width: 512px;
+  height: 350px;
+  
+  opacity: 1;
+  position: absolute;
+  top: 900px;
+  left: 800px;
+  overflow: hidden;
+  background: url("../image/home/image 1.png");
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.v85_1240 {
+  width: 512px;
+  height: 350px;
+  
+  opacity: 1;
+  position: absolute;
+  top: 1900px;
+  left: 120px;
+  overflow: hidden;
+  background: rgba(217, 217, 217, 0.3);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 15px;
+}
+.useGuide {
+  width: 512px;
+  height: 865px;
+  opacity: 1;
+  position: absolute;
+  top: 1385px;
+  left: 800px;
+  overflow: hidden;
+  background: rgba(217, 217, 217, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.signalIcon {
+    width: 512px;
+    height: 498px;
+    background: url("/image/home/v150_67.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 1340px;
+    left: 120px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.v55_17 {
+  width: 100%;
+  height: 100%;
+  background: rgba(208,188,255,0.20000000298023224);
+  opacity: 1;
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  overflow: hidden;
+}
+.name {
+  color: #fff;
+}
+/* 제목 */
+.titleS {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+position: absolute;
+width: 410px;
+height: 134px;
+left: 515px;
+top: 298px;
+}
+
+
+/* Title */
+.title {
+width: 460px;
+height: 86px;
+
+/* Title Hero */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 72px;
+line-height: 120%;
+/* or 86px */
+text-align: center;
+letter-spacing: -0.03em;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+
+/* Subtitle */
+.subtitle {
+width: 610px;
+height: 40px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 33px;
+line-height: 120%;
+/* identical to box height, or 40px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}
+
+/* 게시판 목록 (버튼) */
+.boardlist{
+  width: 200px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 23px;
+  left: 1100px;
+  font-family: Lato;
+  font-weight: Regular;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}

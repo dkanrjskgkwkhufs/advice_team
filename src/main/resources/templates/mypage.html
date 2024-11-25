@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+        <link href="./css/mypage.css" rel="stylesheet" />
+        <title>회원정보</title>
+    </head>
+    <body>
+        <div class="v185_112">
+            <div class="v233_12">
+
+            </div>
+
+            <div class="v233_13">
+                <div class="v233_14">
+
+                </div>
+
+                <div class="v244_45">
+
+                </div>
+                <div>
+                    <a href="/login">
+                        <div class="backSystem">
+                            <div class="backIcon">
+                            </div>
+
+                            <span class="backtext">Log In</span>
+                        </div>
+                    </a>
+                </div>
+                <span class="v242_13" >비밀번호</span>
+                <span class="userpassword" th:text="${member.password}">테스트</span>
+                <div class="v244_47">
+
+                </div>
+                <span class="v244_37" th:text="${member.username}">이름 테스트</span>
+                <span class="useremail" th:text="${member.email}">이메일 테스트</span>
+                <span class="v244_39" th:text="${member.campus}">캠퍼스</span>
+                <span class="v233_33">My Page</span>
+            </div>
+            <div class="v185_113">
+                <div class="v185_114">
+
+                </div>
+                <span class="v185_115">HUFS Signal</span>
+                <div class="v185_116">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.v3_252 {
+  width: 100%;
+  height: 810px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v3_287 {
+  width: 405px;
+  height: 600px;
+  background: url("../images/v3_287.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 105px;
+  left: 517px;
+  overflow: hidden;
+
+}
+.v3_288 {
+  width: 405px;
+  height: 600px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border: 2px solid rgba(0,0,0,1);
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+}
+.v3_280 {
+  width: 215px;
+  height: 18px;
+  background: url("../images/v3_280.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 516px;
+  left: 94px;
+  overflow: hidden;
+}
+.v3_281 {
+  width: 154px;
+  color: rgba(101,85,143,1);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v3_282 {
+  width: 61px;
+  color: rgba(71,26,160,1);
+  position: absolute;
+  top: 0px;
+  left: 154px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v3_268 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_268.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 368px;
+  left: 24px;
+  overflow: hidden;
+}
+.LogInClick {
+  width: 358px;
+  height: 50px;
+  background: rgba(187,132,232,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.v3_270 {
+  width: 50px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 16px;
+  left: 157px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+  cursor: pointer;
+}
+.v3_271 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_271.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 211px;
+  left: 24px;
+  overflow: hidden;
+}
+.v3_272 {
+  width: 18px;
+  height: 20px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 15px;
+  left: 331px;
+  overflow: hidden;
+}
+.eyes {
+  background-image: url("/image/login/가리기 아이콘.png");
+  width: 20px;
+  height: 19px;
+  cursor: pointer;
+  opacity: 1;
+  position: absolute;
+  
+}
+.v3_274 {
+  width: 27px;
+  height: 30px;
+  background: rgba(244,244,244,1);
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  left: 9px;
+  overflow: hidden;
+}
+.v3_275 {
+  background-image: url("/image/login/비번 아이콘.png");
+  width: 30px;
+  height: 28px;
+  
+  opacity: 1;
+  position: absolute;
+  
+}
+.v3_276 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_276.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border: 2px solid rgba(151,71,255,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+.passwordInsert {
+  width: 250px;
+  color: rgba(0,0,0,0.30000001192092896);
+  position: absolute;
+  top: 16px;
+  left: 55px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+.v3_263 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_263.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 125px;
+  left: 24px;
+  overflow: hidden;
+}
+.v3_264 {
+  width: 27px;
+  height: 30px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  overflow: hidden;
+}
+.v3_265 {
+  background-image: url("/image/login/메일 아이콘.png");
+  width: 30px;
+  height: 28px;
+  
+  opacity: 1;
+  position: absolute;
+  
+}
+.v3_266 {
+  width: 358px;
+  height: 50px;
+  background: url("../images/v3_266.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border: 2px solid rgba(151,71,255,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+.emailInsert {
+  width: 250px;
+  color: rgba(0,0,0,0.30000001192092896);
+  position: absolute;
+  top: 16px;
+  left: 55px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+.v3_262 {
+  width: 110px;
+  color: rgba(71,26,160,1);
+  position: absolute;
+  top: 48px;
+  left: 23px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}

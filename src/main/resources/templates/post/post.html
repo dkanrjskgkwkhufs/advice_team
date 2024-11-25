@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <link href="/css/postboard.css" rel="stylesheet" />
+    <title>게시글 상세</title>
+</head>
+<body>
+<div th:if="${errorMessage}" style="color: red;">
+    <p th:text="${errorMessage}"></p>
+</div>
+
+<div class="v116_220">
+    <div class="v116_221">
+
+    </div>
+    <div class="v116_229">
+
+    </div>
+    <div class="v185_94">
+        <div class="v185_95">
+
+        </div>
+
+        <span class="v185_96">HUFS Signal</span>
+
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">
+                <div class="v185_97">
+                    <div class="v185_98">
+
+                    </div>
+                    <span class="v185_99">Log Out</span>
+                </div>
+            </button>
+        </form>
+        <a href="/mypage">
+            <span class="v185_100">My Page</span>
+        </a>
+        <a href="/board">
+            <span class="v185_101">Boards / Recent</span>
+        </a>
+    </div>
+
+
+
+    <form th:action="@{/posts/{postId}/comment(postId=${post.id})}" method="post">
+        <div class="v116_230">
+            <div class="v116_231">
+                <input class="v116_231" id="content" name="content" rows="1" placeholder="적을 댓글 내용" required>
+            </div>
+
+        </div>
+        <div class="v116_250">
+            <div class="v116_251">
+
+            </div>
+            <button>
+                <span class="v116_252">등록</span>
+            </button>
+        </div>
+    </form>
+    <div class="v116_233">
+        <div class="v116_234">
+
+        </div>
+        <span class="v116_235"><p th:text="${post.content}"></p></span>
+    </div>
+    <div class="v116_240">
+        <ul>
+            <li th:each="comment : ${post.comments}">
+                <strong th:text="${comment.authorEmail}"></strong>:
+                <div class="v116_241">
+                    <span class="v116_242" th:text="${comment.content}"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="v116_236">
+        <div class="v116_237">
+
+        </div>
+        <span class="v116_238">
+            <span th:text="${post.title}"></span>
+        </span>
+    </div>
+    <div class="v116_254">
+        <div class="v116_255">
+
+        </div>
+        <form th:action="@{/posts/{postId}/participate(postId=${post.id})}" method="post">
+            <button>
+                <span class="v116_256">참여
+                    <span th:text="${post.members.size()}">/</span>
+                    <span th:text="${post.maxParticipants}"></span>
+                </span>
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

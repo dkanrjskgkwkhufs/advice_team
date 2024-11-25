@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <link href="./css/boardrecent.css" rel="stylesheet" />
+    <title>게시판 목록</title>
+</head>
+<body>
+<div class="v110_185">
+    <div class="v116_166">
+
+    </div>
+    <div class="v116_168">
+        <!--
+        <div class="v110_11273">
+            <div class="v111_202">
+                <div class="ticket1">
+                    <span class="title1">title1</span>
+                    <span class="discription1">discription1</span>
+                </div>
+                <div class="ticket2">
+                    <span class="title2">title2</span>
+                    <span class="discription2">discription2</span>
+                </div>
+                <div class="ticket3">
+                    <span class="title3">title3</span>
+                    <span class="discription3">discription3</span>
+                </div>
+                <div class="ticket4">
+                    <span class="title4">title4</span>
+                    <span class="discription4">discription4</span>
+                </div>
+                <span class="v110_11274">   Recent</span>
+            </div>
+        </div>
+        -->
+        <div class="v114_183">
+            <div class="v114_184">
+                <div class="v124_240">
+                    <span class="v124_241">문의 및 의견제안 게시판</span>
+                    <span class="v124_242">불편한 상황을 알려주세요</span>
+                </div>
+                <div class="v124_230">
+                    <span class="v124_231">지역 기반 모임게시판</span>
+                    <span class="v124_232">캠퍼스 소통의 장소</span>
+                </div>
+                <div class="v124_213">
+                    <span class="v124_214">학업 및 스터디 게시판</span>
+                    <span class="v124_215">스터디 메이트 찾는 곳</span>
+                </div>
+                <a href="/posts">
+                    <div class="v124_193">
+                        <span class="v124_194">취미 및 관심사 게시판</span>
+                        <span class="v124_195">관심사를 공유해요</span>
+                    </div>
+                </a>
+                <span class="v114_189">Boards</span>
+            </div>
+        </div>
+    </div>
+    <div class="v146_154">
+        <div class="v146_155">
+
+        </div>
+
+        <span class="v146_156">HUFS Signal</span>
+
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">
+                <div class="v146_157">
+                    <div class="v146_158">
+
+                    </div>
+                    <span class="v146_159">Log Out</span>
+                </div>
+            </button>
+        </form>
+        <a href="/board">
+            <span class="v146_160">Boards</span>
+        </a>
+    </div>
+</div>
+<script>
+    function HoverEffect(hoverTargetSelector, backgroundSelector, hoverClass) {
+        const hoverTarget = document.querySelector(hoverTargetSelector);
+        const backgroundDiv = document.querySelector(backgroundSelector);
+
+        if (hoverTarget && backgroundDiv) {
+            hoverTarget.addEventListener('mouseover', () => {
+                backgroundDiv.classList.add(hoverClass);
+            });
+
+            hoverTarget.addEventListener('mouseout', () => {
+                backgroundDiv.classList.remove(hoverClass);
+            });
+        }
+    }
+    HoverEffect('.v146_159', '.v146_158', 'hover-background');
+</script>
+</body>
+</html>

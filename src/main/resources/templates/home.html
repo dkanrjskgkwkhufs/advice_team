@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="ko">
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+        <link href="./css/home.css" rel="stylesheet" />
+        <title>홈</title>
+    </head>
+    <body>
+        <div class="v3_251">
+            <div class="v30_12">
+                <div class="v3_289">
+
+                </div>
+
+                <span class="v31_33">HUFS Signal</span>
+
+                <div class="signupModule">
+                    <div class="signupbox">
+
+                    </div>
+                    <a href="/signup">
+                        <span class="signup">Sign Up</span>
+                    </a>
+                </div>
+                <a href="/login">
+                    <span class="v102_147">Log In</span>
+                </a>
+                <a href="/board">
+                    <span class="boardlist">Board</span>
+                </a>    
+            </div>
+            <div class="name">
+
+            </div>
+            <div class="mainimage">
+                
+            </div>
+            <div class="titleS">
+                <span class="title">HUFS SIGNAL</span>
+                <span class="subtitle">한국외국어대학교 만남 서비스</span>
+            </div>
+            <div class="v90_141">
+                <br><br><br><br>
+                <h2>HUFS Signal</h2>
+                한국외대 만남 서비스는 학생들이 자유롭게
+                소통하고 만날 수 있는 모임 플랫폼입니다.
+                <br><br>
+                다양한 관심사를 공유하는 학우들을 연결하는
+                것을 목표로 합니다. 새로운 친구를 만나고, 스
+                터디 그룹을 찾는 등, 다양한 모임에 참여해 보세요. 학우 여러분의 대학 생활이 더 풍성해지도록, HUFS Signal이 함께합니다.
+            </div>
+            <div class="v85_1240">
+                <br><br><br>
+                <h2>AdvICE 프로젝트 2팀</h2>
+                HUFS Signal | 한국외대만남서비스
+                <br><br>
+                김규민(팀장): 총괄
+                <br><br>
+                박현민, 강병규 : 디자인 및 서기
+                <br><br>
+                이의현: 백엔드
+                <br><br>
+                장인극: 프론트엔드
+            </div>
+            <div class="useGuide">
+                <br><br><br><br><br><br>
+                <h2>Only “HUFS”</h2>
+                HUFS Signal은 외대생 전용 서비스로, 학교 메일로만 회원가입이 가능합니다. 이를 통해 외대생들만이 서비스를 이용할 수 있어 안전하고 신뢰성 높은 환경을 제공합니다.
+                <br>
+                <h2>My Page</h2>
+                회원가입 후 My Page에서 자신의 회원 정보를 확인하고, 작성한 글이나 참여한 모임을 조회할 수 있어 편리함을 제공합니다.
+                <br>
+                <h2>Boards / Recents</h2>
+                다양한 게시판들과 최근 게시글을 모아볼 수 있는 우리의 또 다른 메인 페이지 입니다. 다양한 게시판을 둘러보고 최근 게시글을 통해 새로운 모임과 활동을 쉽게 찾아보세요. 
+                <br>
+                <h2>Posts</h2>
+                게시글은 정원이 존재하며 "참여" 버튼을 통해 쉽게 모임에 참여할 수 있습니다. 또한, "댓글" 기능을 통해 작성자와 자유롭게 소통하고 필요한 정보를 주고받을 수 있습니다.
+                <br>
+                <h2>Notice</h2>
+                공지사항이나 중요한 정보는 공지사항 게시판에서 확인할 수 있으며, 궁금한 점이 있을 때는 문의 게시판을 통해 질문을 남겨주세요.
+            </div>
+            <div class="signalIcon">
+
+            </div>
+            <div class="v55_17">
+
+            </div>
+            <div class="gitaImg">
+
+            </div>
+            <div class="name">
+
+            </div>
+        </div>
+        <script>
+        function HoverEffect(hoverTargetSelector, backgroundSelector, hoverClass) {
+            const hoverTarget = document.querySelector(hoverTargetSelector);
+            const backgroundDiv = document.querySelector(backgroundSelector);
+
+            if (hoverTarget && backgroundDiv) {
+                hoverTarget.addEventListener('mouseover', () => {
+                    console.log('Adding hover class');
+                    backgroundDiv.classList.add(hoverClass);
+                });
+
+                hoverTarget.addEventListener('mouseout', () => {
+                backgroundDiv.classList.remove(hoverClass);
+                });
+            }
+        }
+        HoverEffect('.signup','.signupbox','.hover-background');
+    </script>
+    </body>
+    </html>

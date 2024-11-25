@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="ko">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <link href="/css/posts.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+<div class="v102_5547">
+    <div class="v207_1104">
+        <div class="v211_34">
+            <div class="v211_29">
+
+            </div>
+            <div class="v207_1122">
+
+            </div>
+            <div class="v207_1115">
+
+            </div>
+        </div>
+        <div class="v211_3512">
+            <div class="v211_30">
+                <div class="v207_1293">
+                    <li th:each="post : ${posts}">
+                        <span class="v207_1294" th:text="${post.maxParticipants}"></span>
+                    </li>
+                </div>
+            </div>
+            <div class="v207_1119">
+                <span class="v207_1120">최대 인원</span>
+            </div>
+        </div>
+        <div class="v211_35">
+            <div class="v211_30">
+                <div class="v207_1293">
+                    <li th:each="post : ${posts}">
+                        <span class="v207_1294" th:text="${post.members.size}"></span>
+                    </li>
+                </div>
+            </div>
+            <div class="v207_1119"><span class="v207_1120">참여 현황</span></div>
+        </div>
+        <div class="v211_36">
+            <div class="v211_32">
+                <div class="v207_1173">
+                    <li th:each="post : ${posts}">
+                        <a th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.title}" class="v207_1176"></a>
+                    </li>
+                </div>
+            </div>
+            <div class="v207_1113"><span class="v207_1114">게시글 제목</span></div>
+        </div>
+        <div class="v211_38">
+            <div class="v211_33">
+                <div class="v207_1128">
+                    <li th:each="post : ${posts}">
+                        <span class="v207_1129" th:text="${post.authorEmail}"></span>
+                    </li>
+                </div>
+            </div>
+            <span class="v207_1111">작성자 이름</span>
+        </div>
+
+        <div class="v207_1081"></div>
+        <div class="v211_679"></div>
+    </div>
+    <div class="v241_25"><span class="v207_1073">안녕하세요! 이곳은 취미 및 관심사를 공유하는 게시판입니다!</span>
+        <span class="v207_1072">취미 및 관심사</span></div>
+    <div class="v185_85">
+        <div class="v185_86">
+
+        </div>
+            <span class="v185_87">HUFS Signal</span>
+        <div class="v185_88">
+            <form th:action="@{/logout}" method="post">
+
+                    <div class="v185_89">
+
+                    </div>
+                    <button type="submit">
+                        <span class="v185_90">Log Out</span>
+                    </button>
+            </form>
+        </div>
+        <a href="/board">
+            <span class="v185_92">Boards</span>
+        </a>
+    </div>
+    <div class="v211_763">
+        <form method="get">
+            <a href="/posts/add">
+                <div class="v211_764"></div>
+                <span class="v211_765">New Post</span>
+            </a>
+        </form>
+    </div>
+    <div class="v218_25">
+        <div class="v241_32">
+            <span class="v241_33">최신 글</span>
+        </div>
+        <div class="v218_33">
+
+        </div>
+        <div class="v218_100">
+            <li th:each="post : ${posts}">
+                <a th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.title}" class="v207_1176"></a>
+            </li>
+        </div>
+
+    </div>
+    <div class="v241_24">
+        <div class="v241_59"></div>
+        <div class="v241_55"></div>
+        <div class="v241_63"></div>
+        <div class="v241_17"></div>
+        <div class="v241_12"></div>
+        <div class="v241_13"></div>
+        <div class="v241_14"></div>
+        <div class="v241_15"></div>
+        <div class="v241_16"></div>
+    </div>
+</div>
+<script>
+    // logout
+    function HoverEffect(hoverTargetSelector, backgroundSelector, hoverClass) {
+        const hoverTarget = document.querySelector(hoverTargetSelector);
+        const backgroundDiv = document.querySelector(backgroundSelector);
+
+        if (hoverTarget && backgroundDiv) {
+            hoverTarget.addEventListener('mouseover', () => {
+                backgroundDiv.classList.add(hoverClass);
+            });
+
+            hoverTarget.addEventListener('mouseout', () => {
+                backgroundDiv.classList.remove(hoverClass);
+            });
+        }
+    }
+
+    // 로그아웃 버튼 hover 효과
+    HoverEffect('.v185_90', '.v185_89', 'hover-background1');
+
+    // 새 게시물 버튼 hover 효과
+    HoverEffect('.v211_765', '.v211_764', 'hover-background2');
+</script>
+</body>
+</html>
